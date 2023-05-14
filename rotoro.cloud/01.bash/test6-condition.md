@@ -24,7 +24,11 @@ fi
 
 [ 10 -gt 2 ]                If number1 > number2 (true)
 
+[ 10 -ge 2 ]                If number1 >= number2 (true)
+
 [ 2 -lt 3 ]                 If number1 < number2 (true)
+
+[ 2 -le 3 ]                 If number1 <= number2 (true)
 
 # Additional
 [ ] --> [[ ]] (только в bash)
