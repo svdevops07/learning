@@ -2,6 +2,25 @@
 
 
 ## BASIC COMMANDS
+### Help
+```
+helm --help
+helm repo --help
+helm repo update --help
+
+helm repo list
+helm repo update
+```
+### Repos
+```
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install my-release bitnami/wordpress
+
+helm list
+helm status my-release
+
+helm uninstall my-release
+```
 
 helm install wordpress
 
@@ -10,6 +29,13 @@ helm upgrade wordpress
 helm rollback wordpress
 
 helm uninstall wordpress
+
+
+helm install <release_name> <chart_name>	- for many Releases
+
+helm install site-1 bitnami/wordpress		- Release-1
+
+helm install site-2 bitnami/wordpress           - Release-2
 
 
 ## INSTALLATION
@@ -42,4 +68,15 @@ sudo apt-get install apt-transport-https --yes
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
 sudo apt-get update
 sudo apt-get install helm
+```
+
+## Autocomplete
+### Loading completions in your current shell session:
+```
+source <(helm completion bash)
+```
+
+### Loading completions for every new session, execute once:
+```
+helm completion bash > /etc/bash_completion.d/helm
 ```
