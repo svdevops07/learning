@@ -13,6 +13,8 @@ helm repo update
 ```
 ### Repos
 ```
+helm search hub wordpress
+
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install my-release bitnami/wordpress
 
@@ -21,7 +23,7 @@ helm status my-release
 
 helm uninstall my-release
 ```
-
+```
 helm install wordpress
 
 helm upgrade wordpress
@@ -36,7 +38,7 @@ helm install <release_name> <chart_name>	- for many Releases
 helm install site-1 bitnami/wordpress		- Release-1
 
 helm install site-2 bitnami/wordpress           - Release-2
-
+```
 
 ## INSTALLATION
 
