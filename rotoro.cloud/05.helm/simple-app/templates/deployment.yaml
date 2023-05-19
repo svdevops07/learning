@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deploy
+spec:
+  replicas: {{ .Values.replicaCount}}
+  selector:
+    matchLabels:
+      app: simple-app
+  templates:
+    metadata:
+      labels:
+        app: simple-app
+    spec:
+      containers:
+      - name: webserver
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
