@@ -39,4 +39,6 @@ helm rollback balancer 1
 kubectl get secrets             # save old Revisions
 
 kubectl get secrets sh.helm.release.v1.balancer.v1 -o jsonpath='{.data.release}' | base64 -d | base64 -d | gunzip -c | jq -r .manifest                          # see Revision v1
+
+helm get manifest balancer --revision 3
 ```
