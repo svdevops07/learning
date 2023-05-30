@@ -48,3 +48,52 @@ do
   esac
 
 done
+
+
+
+
+
+Example1
+```
+car=Audi
+
+case $car in
+
+  "Lada" | "UAZ")
+    echo "${car} brand is from Russia."
+    ;;
+
+  "BMW" | "Mercedes" | "Audi")
+    echo "${car} brand is from Germany."
+    ;;
+
+  "Tesla")
+    echo "${car} brand is from USA."
+    ;;
+
+  "Toyota" | "Mitsubishi" | "Subaru")
+    echo "${car} brand is from Japan."
+    ;;
+
+  *)
+    echo "${car} is an unknown car brand"
+
+
+esac
+```
+
+Example2
+```
+color=$1
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
+case "$color" in
+    red) echo "${red}this is red${reset}"
+    ;;
+    green) echo "${green}this is green${reset}"
+    ;;
+    *) echo "Valid options are red and green"
+esac
+```
