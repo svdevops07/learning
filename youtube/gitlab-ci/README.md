@@ -1,13 +1,10 @@
-Advanced pipelines using .gitlab-ci.yml
+# Advanced pipelines using .gitlab-ci.yml
 
 Keywords:
 
 * local
-
 * file
-
 * remote
-
 * template
 
 
