@@ -2,20 +2,17 @@
 
 Keywords:
 
-* local
-* file
-* remote
-* template
+* *include*
+* *extends*
+* *rules*
+* *trigger*
 
 
 ## include
 
 - local
-
 - file
-
 - remote
-
 - template
 
 С помощью *include* можно включать в ci другие файлы.
@@ -108,9 +105,7 @@ second example:
 С помощью *rules* можно указать 2 атрибута (# when, allow_failure), когда произойдет сбой и разрешить его.
 
 * if
-
 * changes
-
 * exists
 
 ### if
@@ -165,7 +160,6 @@ build:
 Существует 2 типа нисходящих коныейеров:
 
 * multi-project pipelines
-
 * child pipelines
 
 
