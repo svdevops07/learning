@@ -37,15 +37,16 @@
       - "bulgaria.png"
       - "jordan.png"
       - "newzeland.png"
+    notify:
+      - Restart Apache RedHat
+      - Restart Apache Debian
 
 
   handlers:
   - name: Restart Apache RedHat
     service: name=httpd state=restarted
+    when: ansible_os_family == "RedHat"
 
   - name: Restart Apache Debian
     service: name=apache2 state=restarted
-
-      - name: Copy MyHomePage to Servers
-        copy: src={{ source_file }} dest={{ dest_file }}
-        notify: Restart Apache Debian    
+    when: ansible_os_family == "Debian"
