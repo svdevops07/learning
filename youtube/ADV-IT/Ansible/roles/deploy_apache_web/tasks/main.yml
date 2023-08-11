@@ -1,0 +1,31 @@
+- block: #=======Block for RedHat=======
+    - name: Install Apache Web Server for RedHat
+      yum: name=httpd state=latest
+    - name: Start WebServer service for RedHat
+      service: name=httpd state=started enabled=yes
+  when: ansible_os_family == "RedHat"
+
+
+- block: #=======Block for Debian=======
+    - name: Install Apache Web Server for Debian
+      yum: name=apache2 state=latest
+    - name: Start WebServer service for Debian
+      service: name=apache2 state=started enabled=yes
+  when: ansible_os_family == "Debian"
+
+- name: Generate INDEX.HTML file
+  template: src=index.j2 dest={{ dest_folder }} mode=0555
+  notify:
+    - Restart Apache RedHat
+    - Restart Apache Debian
+
+- name: Copy HomePage files to WebServer
+  copy: src={{ item }} dest={{ dest_folder }} mode=0555
+  loop:
+    - "bahamas.png"
+    - "bulgaria.png"
+    - "jordan.png"
+    - "newzeland.png"
+  notify:
+    - Restart Apache RedHat
+    - Restart Apache Debian

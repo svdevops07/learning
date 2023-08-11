@@ -1,0 +1,1 @@
+It is role from playbook4.loop-jinja.yml
